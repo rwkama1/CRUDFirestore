@@ -133,6 +133,7 @@ class Product
        
     }
 }
+module.exports = { addProduct,updateProduct,deleteProduct,listproducts,listproductsexpression,getproduct,Product};
 //   var dtproduct=new Product('4567894564256','Alfajor',30);
 // addProduct(dtproduct).then(data => {
 //    console.log(data);

@@ -1,0 +1,27 @@
+{
+  "name": "crudfirebase",
+  "version": "0.0.1",
+  "description": "CRUD Firebase",
+  "main": "conection.js",
+  "scripts": {
+    "start": "node dproduct.js"
+  },
+  "author": {
+    "name": "Carlos Andres",
+    "email": "rwkamandriw@gmail.com",
+    "url": "https://cvcarlosr.herokuapp.com/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "backend",
+    "js",
+    "javascript"  
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rwkama/crudproducmssql.git"
+  },
+  "dependencies": {
+    "firebase": "^8.2.10"
+  }
+}

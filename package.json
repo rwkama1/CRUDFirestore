@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rwkama/crudproducmssql.git"
+    "url": "https://github.com/rwkama1/CRUDFirestore"
   },
   "dependencies": {
     "firebase": "^8.2.10"

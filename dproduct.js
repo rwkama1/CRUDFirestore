@@ -1,6 +1,15 @@
 const db = require('./conection').db;
+class DProduct  {
+  static instancia;
+ constructor() { }
+  static getInstance() {
+        if (!DProduct.instancia) {
+            DProduct.instancia = new DProduct();
+        }
 
-async function addProduct(dproduct) {
+        return DProduct.instancia;
+    }
+async  addProduct(dproduct) {
    
     try {
        await db.collection("Product").doc(dproduct.barcode).set(
@@ -17,7 +26,7 @@ async function addProduct(dproduct) {
         return error.message;
     }
 }
-async function updateProduct(dproduct) {
+async  updateProduct(dproduct) {
    
     try {
        await db.collection("Product").doc(dproduct.barcode).update(
@@ -34,7 +43,7 @@ async function updateProduct(dproduct) {
         return error.message;
     }
 }
-async function deleteProduct(dproduct) {
+async  deleteProduct(dproduct) {
    
     try {
        await db.collection("Product").doc(dproduct.barcode).delete()
@@ -44,7 +53,7 @@ async function deleteProduct(dproduct) {
         return error.message;
     }
 }
-async function listproducts() {
+async  listproducts() {
    
     try {
      const lproducts= await db.collection("Product").get();
@@ -61,7 +70,7 @@ async function listproducts() {
         return error.message;
     }
 }
-async function listproductsexpression(searchText) {
+async  listproductsexpression(searchText) {
    
     try {
         
@@ -82,7 +91,7 @@ async function listproductsexpression(searchText) {
         return error.message;
     }
 }
-async function getproduct(barcode) {
+async  getproduct(barcode) {
    
     try {
         var objproduct=null;
@@ -102,6 +111,7 @@ async function getproduct(barcode) {
         return error.message;
     }
 }
+ }
 class Product
 {
     _barcode = "";
@@ -133,11 +143,12 @@ class Product
        
     }
 }
-module.exports = { addProduct,updateProduct,deleteProduct,listproducts,listproductsexpression,getproduct,Product};
-//   var dtproduct=new Product('4567894564256','Alfajor',30);
-// addProduct(dtproduct).then(data => {
-//    console.log(data);
-// })
+module.exports = {DProduct,Product};
+//   var dtproduct=new Product('68797856665','Pizza',120);
+
+// DProduct.getInstance().addProduct(dtproduct).then(data => {
+//     console.log(data);
+//  })
 // updateProduct(dtproduct).then(data => {
 //    console.log(data);
 // })
